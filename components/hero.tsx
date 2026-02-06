@@ -236,7 +236,12 @@ potencia de NovaMind
                 size="lg" 
                 className="h-14 px-10 rounded-xl bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white font-semibold shadow-lg shadow-blue-500/20"
               >
-                <a href="#contacto" className="flex items-center gap-3">
+                <a
+                  href="https://api.whatsapp.com/send/?phone=33768698300&text=Hola%2C+ya+vi+la+pagina+de+Novamind%2C+quiero+empezar+a+trabajar+con+9M+AI&type=phone_number&app_absent=0"
+                  className="flex items-center gap-3"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Comenzar Ahora
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
@@ -251,7 +256,7 @@ potencia de NovaMind
               {[
                 { value: "99.8%", label: "Precisión", desc: "Operaciones perfectas" },
                 { value: "24/7", label: "Disponibilidad", desc: "Sin interrupciones" },
-                { value: "+2.5K", label: "Clientes", desc: "Confían en nosotros" }
+                { value: "+250K", label: "Clientes", desc: "Confían en nosotros" }
               ].map((stat, idx) => (
                 <div key={idx} className="text-center">
                   <div className="text-3xl font-bold text-white mb-1">{stat.value}</div>

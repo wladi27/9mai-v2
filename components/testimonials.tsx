@@ -86,16 +86,16 @@ export function Testimonials() {
   }
 
   useEffect(() => {
-    let interval: NodeJS.Timeout
+    let intervalId: ReturnType<typeof setInterval> | undefined
     
     if (isAutoPlaying) {
-      interval = setInterval(() => {
+      intervalId = setInterval(() => {
         nextSlide()
       }, 5000) // Cambia cada 5 segundos
     }
 
     return () => {
-      if (interval) clearInterval(interval)
+      if (intervalId) clearInterval(intervalId)
     }
   }, [isAutoPlaying, currentIndex])
 
@@ -126,7 +126,7 @@ export function Testimonials() {
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Descubre cómo inversores de todo el mundo están transformando su futuro financiero
-            con la tecnología de vanguardia de 9M AI.
+            con la tecnología de vanguardia de 9MX.
           </p>
         </div>
 

@@ -7,7 +7,10 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           <div>
-            <h3 className="font-bold text-lg mb-4 text-white">9M AI</h3>
+            <h3 className="font-bold text-lg mb-4 text-white">9MX</h3>
+            <p className="text-sm text-blue-300 font-semibold mb-2">
+              Agente autorizado 
+            </p>
             <p className="text-sm text-gray-300">
               Transformando el acceso a inversiones inteligentes impulsadas por IA.
             </p>
@@ -27,7 +30,7 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#faq" className="text-blue-300 hover:text-white transition-colors">
+                <a href="https://is.gd/YUQC4R" target="_blank" rel="noopener noreferrer" className="text-blue-300 hover:text-white transition-colors">
                   Preguntas Frecuentes
                 </a>
               </li>
@@ -65,7 +68,7 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="https://file.notion.so/f/f/2f22ab31-0baf-42e6-81cf-7887b1f5c2fd/e461f2ef-c7ba-441e-ae12-e6e1ec041270/0707_Libro_Blanco_de_9M_AI.pdf?table=block&id=229bd545-685d-80fd-b5ca-c551bada9dc6&spaceId=2f22ab31-0baf-42e6-81cf-7887b1f5c2fd&expirationTimestamp=1768413600000&signature=xWDJlsQFRz4JRIepE44eBV17IXMZXhzyofGn_3WZGCQ&downloadName=%28Haz+clic+para+ver%29+Libro+Blanco_de_9M_AI.pdf" className="text-blue-300 hover:text-white transition-colors">
+                <a href="https://is.gd/m9upgj" target="_blank" rel="noopener noreferrer" className="text-blue-300 hover:text-white transition-colors">
                   White Paper
                 </a>
               </li>
@@ -77,7 +80,7 @@ export function Footer() {
         <Separator className="my-8" />
 
         <div className="flex flex-col sm:flex-row justify-between items-center text-sm text-gray-300">
-          <p>© 2026 9M AI. Todos los derechos reservados.</p>
+          <p>© 2026 9MX. Todos los derechos reservados.</p>
           <p>
             Regulado por: <span className="text-blue-300 font-semibold">FinCEN • NFA • SEC</span>
           </p>

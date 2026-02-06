@@ -7,7 +7,7 @@ export function AboutUs() {
         <div className="mb-12">
           <h1 className="text-5xl font-bold mb-6">Sobre Nosotros</h1>
           <p className="text-xl text-foreground/70 text-pretty">
-            9M AI es una empresa fintech de inteligencia artificial con sede en Nueva York, 
+            9MX es una empresa fintech de inteligencia artificial con sede en Nueva York, 
             fundada por ex ejecutivos de Goldman Sachs, científicos de IA de la Universidad 
             de Columbia y los mejores ingenieros cuantitativos.
           </p>
@@ -51,7 +51,7 @@ export function AboutUs() {
             </CardHeader>
             <CardContent className="space-y-4 text-foreground/70">
               <p>
-                El sistema 9M AI integra grandes modelos de IA, aprendizaje automático, motores 
+                El sistema 9MX integra grandes modelos de IA, aprendizaje automático, motores 
                 cuantitativos de pila completa e infraestructura blockchain. Permite la toma de 
                 decisiones autónoma 24/7, ejecución de operaciones y control de riesgos, cubriendo 
                 tanto mercados de acciones como criptomonedas.
@@ -70,7 +70,7 @@ export function AboutUs() {
             </CardHeader>
             <CardContent className="space-y-4 text-foreground/70">
               <p>
-                9M AI es la primera plataforma de inversión verdaderamente autónoma que delega 
+                9MX es la primera plataforma de inversión verdaderamente autónoma que delega 
                 completamente en la IA capacidades tradicionalmente reservadas para inversionistas 
                 humanos élite —aprovechando la tecnología para desbloquear oportunidades de 
                 creación de riqueza para más personas.

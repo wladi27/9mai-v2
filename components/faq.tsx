@@ -9,8 +9,8 @@ import {
 
 const faqs = [
   {
-    question: '¿Qué es 9M AI y qué lo hace diferente?',
-    answer: '9M AI es un ecosistema de educación financiera e inversión apoyado por inteligencia artificial, diseñado para ayudar a las personas a tomar decisiones más informadas en la era de las finanzas digitales. Su enfoque combina tecnología, formación y comunidad, con acceso a operaciones 24/7 impulsadas por el motor propietario NovaMind™.',
+    question: '¿Qué es 9MX y qué lo hace diferente?',
+    answer: '9MX es un ecosistema de educación financiera e inversión apoyado por inteligencia artificial, diseñado para ayudar a las personas a tomar decisiones más informadas en la era de las finanzas digitales. Su enfoque combina tecnología, formación y comunidad, con acceso a operaciones 24/7 impulsadas por el motor propietario NovaMind™.',
   },
   {
     question: '¿Cómo se generan las ganancias dentro del sistema?',
@@ -18,19 +18,19 @@ const faqs = [
   },
   {
     question: '¿Necesito experiencia previa en inversiones o en IA?',
-    answer: 'No. 9M AI está pensado tanto para principiantes como para usuarios avanzados. La academia 9M AI Academy y el acompañamiento educativo estructurado permiten que cualquier persona pueda entender el sistema y participar de forma progresiva.',
+    answer: 'No. 9MX está pensado tanto para principiantes como para usuarios avanzados. La academia 9MX Academy y el acompañamiento educativo estructurado permiten que cualquier persona pueda entender el sistema y participar de forma progresiva.',
   },
   {
     question: '¿Qué papel juegan el rango y la inversión en las recompensas?',
     answer: 'Las recompensas dependen del monto invertido y del rango alcanzado dentro del sistema. A mayor compromiso y desarrollo de equipo, mayores beneficios potenciales, siempre dentro de los límites establecidos en el plan de compensación.',
   },
   {
-    question: '¿Es 9M AI un proyecto a corto o largo plazo?',
-    answer: '9M AI está diseñado como un proyecto de largo plazo, con una visión de crecimiento sostenible, expansión global y desarrollo continuo de su tecnología y comunidad. Operamos con licencias regulatorias en múltiples jurisdicciones.',
+    question: '¿Es 9MX un proyecto a corto o largo plazo?',
+    answer: '9MX está diseñado como un proyecto de largo plazo, con una visión de crecimiento sostenible, expansión global y desarrollo continuo de su tecnología y comunidad. Operamos con licencias regulatorias en múltiples jurisdicciones.',
   },
   {
     question: '¿Cuál es el mínimo para comenzar a invertir?',
-    answer: 'El mínimo de entrada es de 100 USDT. Esto permite que cualquier persona, independientemente de su capital inicial, pueda comenzar a generar ganancias con 9M AI.',
+    answer: 'El mínimo de entrada es de 100 USDT. Esto permite que cualquier persona, independientemente de su capital inicial, pueda comenzar a generar ganancias con 9MX.',
   },
 ]
 
@@ -40,7 +40,7 @@ export function FAQ() {
       <div className="max-w-3xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl sm:text-5xl font-bold mb-4">Preguntas Frecuentes</h2>
-          <p className="text-lg text-foreground/70">Respuestas a las dudas más comunes sobre 9M AI</p>
+          <p className="text-lg text-foreground/70">Respuestas a las dudas más comunes sobre 9MX</p>
         </div>
 
         <Accordion type="single" collapsible className="w-full">

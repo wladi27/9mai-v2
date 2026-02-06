@@ -189,7 +189,12 @@ export function WhyUs() {
                 <p className="text-sm text-gray-300 mb-4">
                   Únete a miles de inversores que ya confían en nuestra plataforma
                 </p>
-                <a href="#contacto" className="inline-block px-8 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold rounded-lg hover:from-blue-500 hover:to-blue-600 transition-all duration-300 border-2 border-blue-600 hover:shadow-lg hover:shadow-blue-500/20">
+                <a
+                  href="https://api.whatsapp.com/send/?phone=33768698300&text=Hola%2C+ya+vi+la+pagina+de+Novamind%2C+quiero+empezar+a+trabajar+con+9M+AI&type=phone_number&app_absent=0"
+                  className="inline-block px-8 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold rounded-lg hover:from-blue-500 hover:to-blue-600 transition-all duration-300 border-2 border-blue-600 hover:shadow-lg hover:shadow-blue-500/20"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Comenzar Ahora
                 </a>
               </div>
@@ -285,7 +290,7 @@ export function WhyUs() {
             <div className="flex-1">
               <h4 className="text-2xl font-bold mb-4 text-white">Total Transparencia y Cumplimiento</h4>
               <p className="text-gray-300 mb-6">
-                9M AI opera bajo los más altos estándares regulatorios internacionales. 
+                9MX opera bajo los más altos estándares regulatorios internacionales. 
                 Cada uno de nuestros registros puede ser verificado públicamente en los 
                 portales oficiales de las entidades reguladoras correspondientes.
               </p>

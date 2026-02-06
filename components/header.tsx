@@ -16,10 +16,10 @@ export function Header() {
       <div className="max-w-7xl mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
         <div className="flex items-center gap-2">
           <Image
-            src="/logo.png"
+            src="/logo-new.png"
             alt="9M Logo"
-            width={70}
-            height={70}
+            width={100}
+            height={100}
             className="object-contain"
           />
         </div>
@@ -49,7 +49,14 @@ export function Header() {
         </nav>
 
         <Button asChild>
-          <Link href={anchor('#contacto')} className="text-sm font-medium bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">Quiero empezar</Link>
+          <a
+            href="https://api.whatsapp.com/send/?phone=33768698300&text=Hola%2C+ya+vi+la+pagina+de+Novamind%2C+quiero+empezar+a+trabajar+con+9M+AI&type=phone_number&app_absent=0"
+            className="text-sm font-medium bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Quiero empezar
+          </a>
         </Button>
       </div>
     </header>

@@ -4,24 +4,24 @@ import { useMemo, useState, useEffect, useRef } from 'react'
 import { Button } from '@/components/ui/button'
 
 const TERMS = [
-  { label: '7 Días', days: 7, rate: 10, color: 'from-blue-100 to-cyan-100' },
-  { label: '30 Días', days: 30, rate: 13, color: 'from-cyan-100 to-blue-100' },
-  { label: '90 Días', days: 90, rate: 16, color: 'from-blue-100 to-cyan-100' },
-  { label: '180 Días', days: 180, rate: 18, color: 'from-cyan-50 to-blue-100' },
-  { label: '360 Días', days: 360, rate: 21, color: 'from-blue-100 to-cyan-100' },
+  { label: '90 Días', days: 90, rate: 4.5, color: 'from-blue-100 to-cyan-100' },
+  { label: '180 Días', days: 180, rate: 9, color: 'from-cyan-50 to-blue-100' },
+  { label: '360 Días', days: 360, rate: 15, color: 'from-blue-100 to-cyan-100' },
 ]
 
 export function InvestmentSimulator() {
   const [principal, setPrincipal] = useState<string>('1000')
-  const [termIndex, setTermIndex] = useState<number>(2)
-  const [result, setResult] = useState<{ finalAmount: number; profit: number; dailyProfit: number } | null>(null)
+  const [termIndex, setTermIndex] = useState<number>(0)
+  const [result, setResult] = useState<{ finalAmount: number; profit: number; dailyProfit: number; monthlyProfit: number } | null>(null)
   const [error, setError] = useState<string | null>(null)
   const [isCalculating, setIsCalculating] = useState(false)
   const [animatedProfit, setAnimatedProfit] = useState(0)
+  const [animatedMonthlyProfit, setAnimatedMonthlyProfit] = useState(0)
   const [animatedFinalAmount, setAnimatedFinalAmount] = useState(0)
   const animationRef = useRef<number>()
 
   const selectedTerm = TERMS[termIndex]
+  const months = selectedTerm.days / 30
 
   const principalNumber = useMemo(() => Number(principal.replace(/[^0-9.]/g, '')) || 0, [principal])
 
@@ -64,19 +64,23 @@ export function InvestmentSimulator() {
 
     // Pequeño delay para la animación
     setTimeout(() => {
-      const rate = selectedTerm.rate / 100
-      const finalAmount = +(principalNumber * (1 + rate)).toFixed(2)
-      const profit = +(finalAmount - principalNumber).toFixed(2)
+      const monthlyRate = selectedTerm.rate / 100
+      const months = selectedTerm.days / 30
+      const monthlyProfit = +(principalNumber * monthlyRate).toFixed(2)
+      const profit = +(principalNumber * monthlyRate * months).toFixed(2)
+      const finalAmount = +(principalNumber + profit).toFixed(2)
       const dailyProfit = +(profit / selectedTerm.days).toFixed(2)
 
-      const newResult = { finalAmount, profit, dailyProfit }
+      const newResult = { finalAmount, profit, dailyProfit, monthlyProfit }
       setResult(newResult)
       
       // Animaciones
       setAnimatedProfit(0)
+      setAnimatedMonthlyProfit(0)
       setAnimatedFinalAmount(principalNumber)
       
       setTimeout(() => {
+        animateValue(0, monthlyProfit, 1000, setAnimatedMonthlyProfit)
         animateValue(0, profit, 1000, setAnimatedProfit)
         animateValue(principalNumber, finalAmount, 1000, setAnimatedFinalAmount)
         setIsCalculating(false)
@@ -86,7 +90,7 @@ export function InvestmentSimulator() {
 
   const handleReset = () => {
     setPrincipal('1000')
-    setTermIndex(2)
+    setTermIndex(0)
     setResult(null)
     setError(null)
     if (animationRef.current) {
@@ -117,20 +121,11 @@ export function InvestmentSimulator() {
                 </span>
               </div>
               <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">Calcula tu <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-blue-600">Potencial de Ganancia</span></h3>
-              <p className="text-gray-600 mt-2 md:mt-3 text-base md:text-lg">Simula tu inversión y descubre el poder del interés compuesto con NovaMind AI</p>
+              <p className="text-gray-600 mt-2 md:mt-3 text-base md:text-lg">Simula tu inversión y conoce tu ganancia total del período según la tasa mensual</p>
             </div>
             
             {/* Stats rápidas */}
-            <div className="flex gap-4 md:gap-6">
-              <div className="text-center">
-                <div className="text-xl sm:text-2xl font-bold text-gray-900">21%</div>
-                <div className="text-xs sm:text-sm text-cyan-600">Máxima tasa</div>
-              </div>
-              <div className="text-center">
-                <div className="text-xl sm:text-2xl font-bold text-gray-900">99.5%</div>
-                <div className="text-xs sm:text-sm text-cyan-600">Precisión</div>
-              </div>
-            </div>
+            
           </div>
 
           {/* Tarjeta principal */}
@@ -212,7 +207,7 @@ export function InvestmentSimulator() {
                             }`}>
                               {term.rate}%
                             </div>
-                            <div className="text-xs text-gray-500 mt-1">Tasa</div>
+                            <div className="text-xs text-gray-500 mt-1">Tasa mensual</div>
                           </div>
                           
                           {termIndex === index && (
@@ -292,7 +287,7 @@ export function InvestmentSimulator() {
                         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                           <div>
                             <div className="text-sm text-cyan-700">Resultados Simulados</div>
-                            <div className="text-base md:text-lg font-bold text-gray-900">{selectedTerm.label} • {selectedTerm.rate}% Tasa</div>
+                            <div className="text-base md:text-lg font-bold text-gray-900">{selectedTerm.label} • {selectedTerm.rate}% mensual</div>
                           </div>
                           <div className="text-xs text-gray-500 bg-white px-2 py-1 rounded border border-gray-200">
                             Actualizado: Ahora
@@ -309,12 +304,12 @@ export function InvestmentSimulator() {
                         </div>
                         
                         <div className="p-4 md:p-5 rounded-xl bg-cyan-50 border border-cyan-200">
-                          <div className="text-sm text-gray-600 mb-2">Ganancia Total</div>
+                          <div className="text-sm text-gray-600 mb-2">Ganancia Mensual</div>
                           <div className="text-xl md:text-2xl font-bold text-cyan-700">
-                            ${animatedProfit.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                            ${animatedMonthlyProfit.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                           </div>
                           <div className="text-xs text-cyan-700 mt-2">
-                            +{selectedTerm.rate}% del capital
+                            +{(selectedTerm.rate * (selectedTerm.days / 30)).toFixed(1)}% del capital en {months} meses
                           </div>
                         </div>
                         
@@ -338,10 +333,10 @@ export function InvestmentSimulator() {
                             <div className="text-base md:text-lg font-bold text-gray-900">${result.dailyProfit.toFixed(2)}</div>
                           </div>
                           <div className="flex flex-col sm:flex-row sm:justify-between items-start sm:items-center gap-1">
-                            <div className="text-gray-600">Tasa efectiva anualizada</div>
-                            <div className="text-base md:text-lg font-bold text-emerald-600">
-                              {((Math.pow(1 + selectedTerm.rate/100, 365/selectedTerm.days) - 1) * 100).toFixed(1)}%
-                            </div>
+                              <div className="text-gray-600">Tasa total del período (tasa mensual × meses)</div>
+                              <div className="text-base md:text-lg font-bold text-emerald-600">
+                                {(selectedTerm.rate * (selectedTerm.days / 30)).toFixed(1)}%
+                              </div>
                           </div>
                           <div className="flex flex-col sm:flex-row sm:justify-between items-start sm:items-center gap-1">
                             <div className="text-gray-600">Período total</div>

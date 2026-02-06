@@ -8,8 +8,8 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: '9M AI - Inteligencia Artificial para Inversión Automática',
-  description: 'Mientras descansas, la IA trabaja para ti. Invierte con 9M AI y transforma tu tiempo en ingresos automáticos con la potencia de NovaMind',
+  title: '9MX - Inteligencia Artificial para Inversión Automática',
+  description: 'Mientras descansas, la IA trabaja para ti. Invierte con 9MX y transforma tu tiempo en ingresos automáticos con la potencia de NovaMind',
   generator: 'v0.app',
   icons: {
     icon: [

@@ -20,7 +20,7 @@ export function Footer() {
             <h4 className="font-semibold mb-4 text-white">Empresa</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="#sobre-nosotros" className="text-blue-300 hover:text-white transition-colors">
+                <a href="/nosotros" className="text-blue-300 hover:text-white transition-colors">
                   Nosotros
                 </a>
               </li>
@@ -30,7 +30,7 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="https://is.gd/YUQC4R" target="_blank" rel="noopener noreferrer" className="text-blue-300 hover:text-white transition-colors">
+                <a href="https://drive.google.com/file/d/1yIquLf-r3NVAEtOVaHj-EYHkn2kpkI8f/view" target="_blank" rel="noopener noreferrer" className="text-blue-300 hover:text-white transition-colors">
                   Preguntas Frecuentes
                 </a>
               </li>
@@ -68,7 +68,7 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="https://is.gd/m9upgj" target="_blank" rel="noopener noreferrer" className="text-blue-300 hover:text-white transition-colors">
+                <a href="https://drive.google.com/file/d/1QC1VNdj6_QaHQrB9OW3PeR6vT-FsiQoo/view" target="_blank" rel="noopener noreferrer" className="text-blue-300 hover:text-white transition-colors">
                   White Paper
                 </a>
               </li>

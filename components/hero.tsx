@@ -320,7 +320,7 @@ potencia de NovaMind
                       preload="metadata"
                     >
                       <source
-                        src="/9M.mp4"
+                        src="https://res.cloudinary.com/dccrit7pm/video/upload/v1772056018/9m-1_BCqErCyR_dl8mmh.mp4"
                         type="video/mp4"
                       />
                       Tu navegador no soporta videos HTML5.
